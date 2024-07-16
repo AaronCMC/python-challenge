@@ -1,3 +1,7 @@
 # python-challenge
 
-PyBank & PyPoll
+##PyBank
+Summarised monthly p&l data via python script in terminal and output to txt
+
+##PyPoll
+Summarised polling data via python script in terminal and output to txt

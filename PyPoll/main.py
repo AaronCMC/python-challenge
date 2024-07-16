@@ -30,38 +30,38 @@ for vote in votes:
 
 candidate_list = list(set(candidate_votes))
 
-vote_Charles = 0
-vote_Raymon = 0
-vote_Diana = 0
+vote_zero = 0
+vote_one = 0
+vote_two = 0
 
 for candidate_vote in candidate_votes:
-    if candidate_vote == "Charles Casper Stockham":
-        vote_Charles = vote_Charles + 1
-    elif candidate_vote == "Raymon Anthony Doane":
-        vote_Raymon = vote_Raymon + 1
-    elif candidate_vote == "Diana DeGette":
-        vote_Diana = vote_Diana + 1
+    if candidate_vote == candidate_list[0]:
+        vote_zero = vote_zero + 1
+    elif candidate_vote == candidate_list[1]:
+        vote_one = vote_one + 1
+    elif candidate_vote == candidate_list[2]:
+        vote_two = vote_two + 1
 
-Charles_pct = vote_Charles / total_votes
-Raymon_pct = vote_Raymon / total_votes
-Diana_pct = vote_Diana / total_votes
+zero_pct = vote_zero / total_votes
+one_pct = vote_one / total_votes
+two_pct = vote_two / total_votes
 
 # determine winner
-if vote_Charles > vote_Raymon and vote_Charles > vote_Diana:
-    winner = "Charles Casper Stockham"
-elif vote_Raymon > vote_Charles and vote_Raymon > vote_Diana:
-    winnner = "Raymon Anthony Doane"
-elif vote_Diana > vote_Charles and vote_Diana > vote_Raymon:
-    winner = "Diana DeGette"
+if vote_zero > vote_one and vote_zero > vote_two:
+    winner = candidate_list[0]
+elif vote_one > vote_zero and vote_one > vote_two:
+    winnner = candidate_list[1]
+elif vote_two > vote_zero and vote_two > vote_one:
+    winner = candidate_list[2]
 
 # print to terminal
 print("Election Results")
 print("---------------------------------------------------------")
 print(f"Total Votes: {total_votes}")
 print("---------------------------------------------------------")
-print(f"Charles Casper Stockham: {Charles_pct: .3%} ({vote_Charles})")
-print(f"Diana DeGette: {Diana_pct: .3%} ({vote_Diana})")
-print(f"Raymon Anthony Doane: {Raymon_pct: .3%} ({vote_Raymon})")
+print(f"{candidate_list[0]}: {zero_pct: .3%} ({vote_zero})")
+print(f"{candidate_list[2]}: {two_pct: .3%} ({vote_two})")
+print(f"{candidate_list[1]}: {one_pct: .3%} ({vote_one})")
 print("---------------------------------------------------------")
 print(f"Winner: {winner}")
 print("---------------------------------------------------------")
@@ -74,9 +74,9 @@ with open(txt_path, 'w') as txtfile:
     txtfile.write("---------------------------------------------------------" + "\n")
     txtfile.write(f"Total Votes: {total_votes}" + "\n")
     txtfile.write("---------------------------------------------------------" + "\n")
-    txtfile.write(f"Charles Casper Stockham: {Charles_pct: .3%} ({vote_Charles})" + "\n")
-    txtfile.write(f"Diana DeGette: {Diana_pct: .3%} ({vote_Diana})" + "\n")
-    txtfile.write(f"Raymon Anthony Doane: {Raymon_pct: .3%} ({vote_Raymon})" + "\n")
+    txtfile.write(f"{candidate_list[0]}: {zero_pct: .3%} ({vote_zero})" + "\n")
+    txtfile.write(f"{candidate_list[2]}: {two_pct: .3%} ({vote_two})" + "\n")
+    txtfile.write(f"{candidate_list[1]}: {one_pct: .3%} ({vote_one})" + "\n")
     txtfile.write("---------------------------------------------------------" + "\n")
     txtfile.write(f"Winner: {winner}" + "\n")
     txtfile.write("---------------------------------------------------------")
